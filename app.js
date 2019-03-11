@@ -8,6 +8,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+app.get('/',(req,res) => {
+    res.send('You can analyze emotions from a text here');
+})
 app.get('/analyse',(req,res,next) => {
     const { message } = req.query;
     if(message){
