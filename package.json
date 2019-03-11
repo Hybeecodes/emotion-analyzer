@@ -4,11 +4,14 @@
   "description": "a simple program which, with a given string, will tell us if it’s mood is sad or happy",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hybeecodes",
   "license": "ISC",
   "dependencies": {
-    "brain.js": "^1.6.1"
+    "body-parser": "^1.18.3",
+    "brain.js": "^1.6.1",
+    "express": "^4.16.4"
   }
 }
