@@ -27,9 +27,13 @@ const fixLength = (dataArr, maxLength) => {
   return dataArr;
 }
     
-const serialize = data => fixLength(serializer.encode(data),maxLength);
-// console.log(serialize('I feel fine'));
-// return;
-const output = net.run(serialize('I feel bad'));
-const decision = (output.happy > output.sad)? "Good Emotion": "Bad Emotion";
-console.log(decision)
+const serialize = (data) => {
+  return fixLength(serializer.encode(data),maxLength);
+}
+
+const analyzeEmotion = (message) => {
+  return net.run(serialize(message));
+}
+
+module.exports = analyzeEmotion;
+
