@@ -13,6 +13,16 @@ After Installation,
 cd emotion-analyzer
 npm install
 
+## Usage
+The analyzer is exposed with an API endpoint
+url: /analyse?message=text
+response: {
+    "happy": 0.0058226026594638824,
+    "sad": 0.9941167831420898
+}s
+
+![](emotion.PNG)
+
 ## Meta
 
 Your Name – [@Hybeecodes](https://twitter.com/Hybeecodes) – obikoya11@gmail.com
