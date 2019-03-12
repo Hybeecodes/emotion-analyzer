@@ -1,5 +1,5 @@
 # Emotion Analyzer
-> A Simple app that tells whether it is a positive statement or a negative one.
+> A Simple app that tells whether it is a positive statement or a negative one. It is hosted on heroku @ https://emo-analyzer.herokuapp.com
 
 
 Emotion Analyzer analyzes a statement using a neural network that was built and trained using brain.js. 
