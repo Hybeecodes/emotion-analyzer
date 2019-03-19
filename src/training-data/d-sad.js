@@ -13,6 +13,10 @@ const sad = [
     {
       input: "Such a bad day",
       output: {sad: 1}
+    },
+    {
+      input: "I don't like this school",
+      output: {sad: 1}
     }
   
   ]

@@ -1,0 +1,21 @@
+.form {
+    width: 50%;
+    margin: auto;
+    padding: 5%;
+}
+h2 {
+    color: antiquewhite;
+    text-align: center;
+}
+.container {
+    padding-top: 7%;
+}
+
+.error {
+    border-color: crimson !important;
+    box-shadow: 0 0 0 0;
+}
+
+body {
+    background-color: cornflowerblue;
+}

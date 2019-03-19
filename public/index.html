@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emotion Analyzer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <div class="form form-group">
+                <div class="text-center">
+                    <img src="emotion.png" width="100" height="100" alt="">
+                </div>
+                <h2>Emotion Analyzer</h2>
+                <p id="errorMsg" class="text-center" style="color:crimson; display:none;">Please Enter A Text</p>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="How are you feeling?" required aria-label="How are you feeling?" id="text" aria-describedby="analyzeBtn">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="analyzeBtn">Analyze</button>
+                    </div>
+                </div>
+                <div id="result" class="text-center" style="display:none;">
+
+                </div>
+            </div>
+                        
+        
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    $('#analyzeBtn').click(function(){
+        const text = $('#text').val();
+        $('#result').html('').fadeOut('slow','swing');
+        $('#errorMsg').fadeOut('slow','swing');
+        if(text == ''){
+            $('#errorMsg').fadeIn('slow','swing');
+            $('#text').addClass('error');
+            return;
+        }
+        $('#text').removeClass('error');
+        const URL = `http://localhost:4000/analyze?message=${text}`;
+        // console.log(text);
+        $(this).attr('disabled',true).text('Analyzing...');
+        $.get(URL,function(res){
+            // console.log(res);
+            let result = '';
+            if(res['happy'] > res['sad']){
+                result = `<p>${text} is a positive Sentence</p>`
+            }else{
+                result = `<p>${text} is a Negative Sentence</p>`
+            }
+            $('#result').html(result).fadeIn('slow','swing');
+            $('#analyzeBtn').attr('disabled',false).text('Analyze');
+        })
+    })
+</script>
+</body>
+</html>
