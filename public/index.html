@@ -55,9 +55,9 @@
             // console.log(res);
             let result = '';
             if(res['happy'] > res['sad']){
-                result = `<p>${text} is a positive Sentence</p>`
+                result = `<p>${text} is a positive emotion</p>`
             }else{
-                result = `<p>${text} is a Negative Sentence</p>`
+                result = `<p>${text} is a Negative emotion</p>`
             }
             $('#result').html(result).fadeIn('slow','swing');
             $('#analyzeBtn').attr('disabled',false).text('Analyze');
