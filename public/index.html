@@ -48,7 +48,7 @@
             return;
         }
         $('#text').removeClass('error');
-        const URL = `http://localhost:4000/analyze?message=${text}`;
+        const URL = `https://emo-analyzer.herokuapp.com/analyze?message=${text}`;
         // console.log(text);
         $(this).attr('disabled',true).text('Analyzing...');
         $.get(URL,function(res){
