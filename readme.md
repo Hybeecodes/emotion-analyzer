@@ -14,9 +14,12 @@ cd emotion-analyzer
 npm install
 
 ## Usage
+![](interface.PNG)
+
+#API
 The analyzer is exposed with an API endpoint:
 
-url: /analyze?message=My girlfriend is so beautiful
+url: /analyze?emotion=My girlfriend is so beautiful
 
 response: {
     "happy": 0.0058226026594638824,

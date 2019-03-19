@@ -14,10 +14,10 @@ app.get('/',(req,res) => {
     res.send('You can analyze emotions from a text here');
 })
 app.get('/analyze',(req,res,next) => {
-    const { message } = req.query;
-    if(message){
+    const { emotion } = req.query;
+    if(emotion){
         const analyze = require('./index');
-        const result = analyze(message);
+        const result = analyze(emotion);
         res.send(result);
     }else{
         res.send("No message Supplied!");
